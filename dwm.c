@@ -2289,13 +2289,6 @@ zoom(const Arg *arg)
 	pop(c);
 }
 
-void
-autostart() {
-	system("killall slstatus");
-	system("slstatus&");
-	system("feh --bg-scale /home/tsu/Pictures/wp.jpg&");
-}
-
 int
 main(int argc, char *argv[])
 {
@@ -2314,7 +2307,6 @@ main(int argc, char *argv[])
 		die("pledge");
 #endif /* __OpenBSD__ */
 	scan();
-	autostart();
 	run();
 	cleanup();
 	XCloseDisplay(dpy);
